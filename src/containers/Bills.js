@@ -1,6 +1,6 @@
-import { ROUTES_PATH } from '../constants/routes.js'
-import { formatDate, formatStatus } from "../app/format.js"
-import Logout from "./Logout.js"
+import { ROUTES_PATH } from '../constants/routes.js';
+import {formatStatus ,} from '../app/format.js';
+import Logout from './Logout.js';
 
 export default class {
   constructor({ document, onNavigate, store, localStorage }) {
@@ -34,11 +34,11 @@ export default class {
       .list()
       .then(snapshot => {
         const bills = snapshot
-          .map(doc => {
+          .map(bill => {
             try {
               return {
-                ...doc,
-                date: formatDate(doc.date),
+                ...bill,
+                
                 status: formatStatus(doc.status)
               }
             } catch(e) {
@@ -46,13 +46,15 @@ export default class {
               // log the error and return unformatted date in that case
               console.log(e,'for',doc)
               return {
-                ...doc,
-                date: doc.date,
+                ...bill,
+                
                 status: formatStatus(doc.status)
               }
             }
           })
+          
           console.log('length', bills.length)
+         
         return bills
       })
     }
