@@ -146,7 +146,7 @@ export default class {
     }
 
     bills.forEach(bill => {
-      $(`#status-bills-container${this.index} #open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills))
+      $(`#open-bill${bill.id}`).off("click").on("click",((e) => this.handleEditTicket(e, bill, bills)))// erreur modal 
     })
 
     return bills
