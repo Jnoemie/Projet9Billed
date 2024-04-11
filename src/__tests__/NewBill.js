@@ -214,7 +214,7 @@ describe("Given I am connected as an employee", () => {
       document.body.appendChild(root);
       router();
     });
-    test("fetche bills from an API and fails with 404 message error", async () => {
+    test("fetch bills from an API and fails with 404 message error", async () => {
       mockStore.bills.mockImplementationOnce(() => {
         return {
           list: () => {
@@ -227,7 +227,7 @@ describe("Given I am connected as an employee", () => {
       expect(message).toBeTruthy();
     });
 
-    test("fetche bills from an API and fails with 500 message error", async () => {
+    test("fetch bills from an API and fails with 500 message error", async () => {
       mockStore.bills.mockImplementationOnce(() => {
         return {
           list: () => {

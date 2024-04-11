@@ -143,7 +143,7 @@ describe("Given I am connected as an employee", () => {
       expect(screen.getByText("Mes notes de frais")).toBeTruthy();
     });
   });
-  test("Fetches bills from mock API GET", async () => {
+  test("Fetch bills from mock API GET", async () => {
     localStorageMock.setItem(
       "user",
       JSON.stringify({ type: "Employee", email: "a@a" })
@@ -174,7 +174,7 @@ describe("Given I am connected as an employee", () => {
       document.body.appendChild(root);
       router();
     });
-    test("fetches bills from an API and fails with 404 message error", async () => {
+    test("fetch bills from an API and fails with 404 message error", async () => {
       mockStore.bills.mockImplementationOnce(() => {
         return {
           list: () => {
@@ -188,7 +188,7 @@ describe("Given I am connected as an employee", () => {
       expect(message).toBeTruthy();
     });
 
-    test("fetches messages from an API and fails with 500 message error", async () => {
+    test("fetch messages from an API and fails with 500 message error", async () => {
       mockStore.bills.mockImplementationOnce(() => {
         return {
           list: () => {
